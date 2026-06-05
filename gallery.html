@@ -23,57 +23,57 @@
   </header>
 
   <main>
-    <section class="page-header">
+    <section class="page-header fade-in-section">
       <h1>NYC Through Local Eyes</h1>
       <p>These are real moments that capture the energy, diversity, and character of the five boroughs, the NYC you will actually experience when you visit.</p>
     </section>
 
-    <section class="gallery">
+    <section class="gallery fade-in-section">
       <h2>Photo Collection</h2>
       <div class="gallery-grid">
-        <figure>
+        <figure class="animate-on-scroll">
           <img src="images/gallery/saxophone.jpg" alt="Jazz saxophonist performing in Union Square subway station with open instrument case and commuters walking past">
           <figcaption>Subway musicians bring life to underground platforms in Union Square, Manhattan.</figcaption>
         </figure>
 
-        <figure>
+        <figure class="animate-on-scroll">
           <img src="images/gallery/chinatown.jpg" alt="Fruit vendor arranging colorful produce display on sidewalk cart in Chinatown with red lanterns overhead">
           <figcaption>Morning prep at a Chinatown fruit stand.</figcaption>
         </figure>
 
-        <figure>
+        <figure class="animate-on-scroll">
           <img src="images/gallery/rooftop.jpg" alt="People gathered on Brooklyn rooftop watching golden hour sunset over Manhattan skyline with One World Trade Center prominent">
           <figcaption>Summer rooftop hang in Williamsburg with Manhattan views.</figcaption>
         </figure>
 
-        <figure>
+        <figure class="animate-on-scroll">
           <img src="images/gallery/stoop.webp" alt="Neighbors sitting on brownstone stoop steps chatting with other neighbors on the street in Park Slope">
           <figcaption>Stoop culture in Park Slope, Brooklyn.</figcaption>
         </figure>
 
-        <figure>
+        <figure class="animate-on-scroll">
           <img src="images/gallery/bodega.png" alt="Black-and-white tabby cat lounging next to chips in corner bodega">
           <figcaption>A bodega cat in Bushwick checking to see what all the commotion is at the front of the store.</figcaption>
         </figure>
 
-        <figure>
+        <figure class="animate-on-scroll">
           <img src="images/gallery/basketball.jpg" alt="Pickup basketball game in chain-link fenced court with players jumping for rebound and city buildings behind">
           <figcaption>Pickup basketball at West 4th Street Courts in Greenwich Village.</figcaption>
         </figure>
 
-        <figure>
+        <figure class="animate-on-scroll">
           <img src="images/gallery/street.png" alt="Colorful street art mural covering entire building wall depicting diverse neighborhood faces and cultural symbols">
           <figcaption>A neighborhood mural in Manhattan's Chinatown.</figcaption>
         </figure>
 
-        <figure>
+        <figure class="animate-on-scroll">
           <img src="images/gallery/ferry.jpg" alt="Commuters on Staten Island Ferry deck with Statue of Liberty and lower Manhattan visible across harbor water">
           <figcaption>The Staten Island Ferry at dawn.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="neighborhood-context">
+    <section class="neighborhood-context fade-in-section">
       <h2>Explore These Neighborhoods</h2>
       <p>Every photo tells a story about a specific corner of the city. Want to know where to eat, what to see, and how to get there? Start with the neighborhood guides.</p>
       <div class="context-links">
@@ -87,5 +87,110 @@
   <footer>
     <p>&copy; 2026 Globetrotter NYC Guide. Built with local knowledge and love for the city.</p>
   </footer>
+
+  <!-- Image Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+    <img class="lightbox-image" src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script>
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.querySelector('.lightbox-image');
+    const lightboxCaption = document.querySelector('.lightbox-caption');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    const galleryFigures = document.querySelectorAll('.gallery figure');
+
+    let currentImageIndex = 0;
+    const images = Array.from(galleryFigures).map(figure => ({
+      src: figure.querySelector('img').src,
+      alt: figure.querySelector('img').alt,
+      caption: figure.querySelector('figcaption').textContent
+    }));
+
+    // Open lightbox
+    function openLightbox(index) {
+      currentImageIndex = index;
+      lightboxImage.src = images[index].src;
+      lightboxImage.alt = images[index].alt;
+      lightboxCaption.textContent = images[index].caption;
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close lightbox
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    // Navigate to next image
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      lightboxImage.src = images[currentImageIndex].src;
+      lightboxImage.alt = images[currentImageIndex].alt;
+      lightboxCaption.textContent = images[currentImageIndex].caption;
+    }
+
+    // Navigate to previous image
+    function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      lightboxImage.src = images[currentImageIndex].src;
+      lightboxImage.alt = images[currentImageIndex].alt;
+      lightboxCaption.textContent = images[currentImageIndex].caption;
+    }
+
+    // Add click listeners to gallery figures
+    galleryFigures.forEach((figure, index) => {
+      figure.addEventListener('click', () => openLightbox(index));
+    });
+
+    // Close button
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Navigation buttons
+    nextBtn.addEventListener('click', nextImage);
+    prevBtn.addEventListener('click', prevImage);
+
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('is-open')) return;
+
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    });
+
+    // Scroll animation observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animateElements = document.querySelectorAll('.animate-on-scroll, .fade-in-section');
+    animateElements.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>

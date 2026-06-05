@@ -23,7 +23,7 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero fade-in-section">
       <div class="hero-content">
         <h1>Discover NYC Like a Local</h1>
         <p>Born and raised in New York City, I am here to share the neighborhoods, food spots, and hidden gems that make this city unforgettable. Skip the tourist traps and experience the real NYC.</p>
@@ -37,42 +37,42 @@
       </div>
     </section>
 
-    <section class="neighborhoods">
+    <section class="neighborhoods fade-in-section">
       <h2>Explore NYC by Neighborhood</h2>
       <p>Each corner of the city has its own personality. From the arts scene in Williamsburg to the historic streets of Greenwich Village, discover what makes each neighborhood unique.</p>
 
       <div class="neighborhood-cards">
-        <article class="neighborhood-card">
+        <article class="neighborhood-card animate-on-scroll">
           <img src="images/index/williamsburg.jpg" alt="Street art and cafes in Williamsburg, Brooklyn">
           <h3>Williamsburg</h3>
           <p>Brooklyn's creative hub with vintage shops, street art, and waterfront views.</p>
         </article>
 
-        <article class="neighborhood-card">
+        <article class="neighborhood-card animate-on-scroll">
           <img src="images/index/greenwich.webp" alt="Tree-lined street with brownstones in Greenwich Village">
           <h3>Greenwich Village</h3>
           <p>Historic charm, jazz clubs, and cobblestone streets in Manhattan's heart.</p>
         </article>
 
-        <article class="neighborhood-card">
+        <article class="neighborhood-card animate-on-scroll">
           <img src="images/index/flushing.jpg" alt="Busy streets and Asian restaurants in Flushing, Queen">
           <h3>Flushing</h3>
           <p>Global food capital known for vibrant street life, regional Asian cuisine, and no-frills authenticity.</p>
         </article>
 
-        <article class="neighborhood-card">
+        <article class="neighborhood-card animate-on-scroll">
           <img src="images/index/harlem.jpg" alt="Historic brownstones and cultural landmarks in Harlem">
           <h3>Harlem</h3>
           <p>Cultural cornerstone with rich Black history, iconic music venues, and beautiful residential streets.</p>
         </article>
 
-        <article class="neighborhood-card">
+        <article class="neighborhood-card animate-on-scroll">
           <img src="images/index/soho.webp" alt="Cast-iron buildings and shopping streets in SoHo, Manhattan">
           <h3>Soho</h3>
           <p>Iconic cast-iron architecture, high-end shopping, and a legacy rooted in art and design.</p>
         </article>
-        
-        <article class="neighborhood-card">
+
+        <article class="neighborhood-card animate-on-scroll">
           <img src="images/index/astoria.jpeg" alt="Waterfront views and lively streets in Astoria, Queens">
           <h3>Astoria</h3>
           <p>Diverse, food-loving neighborhood with Mediterranean roots, museums, and skyline views.</p>
@@ -80,45 +80,23 @@
       </div>
     </section>
 
-    <section class="itinerary">
-      <h2>A Perfect Day in NYC</h2>
-      <p>Not sure where to start? Here is a sample itinerary to experience the city from morning to night.</p>
-
-      <div class="itinerary-timeline">
-        <article class="itinerary-block">
-          <h3>Morning</h3>
-          <p>Grab a bagel and coffee in the East Village, then stroll through Central Park or walk the High Line for elevated city views.</p>
-        </article>
-
-        <article class="itinerary-block">
-          <h3>Afternoon</h3>
-          <p>Explore a museum (MoMA, Met, or Natural History), then grab lunch in Chinatown or a food hall like Chelsea Market.</p>
-        </article>
-
-        <article class="itinerary-block">
-          <h3>Night</h3>
-          <p>Catch a show in the Theater District, enjoy dinner in the West Village, or experience the nightlife in Williamsburg.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="site-features">
+    <section class="site-features fade-in-section">
       <h2>What You Will Find Here</h2>
 
       <div class="feature-cards">
-        <article class="feature">
+        <article class="feature animate-on-scroll">
           <h3>Top Attractions</h3>
           <p>From iconic landmarks to off-the-beaten-path spots, filtered by neighborhood, budget, and indoor/outdoor options.</p>
           <a href="attractions.html">Browse Attractions</a>
         </article>
 
-        <article class="feature">
+        <article class="feature animate-on-scroll">
           <h3>Food Guide</h3>
           <p>Curated restaurant picks for solo diners, friend groups, families, and budget-conscious travelers who want authentic flavor.</p>
           <a href="guide.html">See Food Guide</a>
         </article>
 
-        <article class="feature">
+        <article class="feature animate-on-scroll">
           <h3>Photo Gallery</h3>
           <p>NYC through a local lens: real moments that capture the energy, diversity, and character of the five boroughs.</p>
           <a href="gallery.html">View Gallery</a>
@@ -130,5 +108,25 @@
   <footer>
     <p>&copy; 2026 Globetrotter NYC Guide. Built with local knowledge and love for the city.</p>
   </footer>
+
+  <script>
+    // Scroll animation observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animateElements = document.querySelectorAll('.animate-on-scroll, .fade-in-section');
+    animateElements.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
