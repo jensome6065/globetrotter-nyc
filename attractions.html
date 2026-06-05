@@ -112,10 +112,11 @@
       // Map center (roughly center of all attractions)
       const nycCenter = { lat: 40.7489, lng: -73.9680 };
 
-      // Create the map
+      // Create the map with mapId for advanced markers
       const map = new google.maps.Map(document.getElementById("attractions-map"), {
         zoom: 12,
         center: nycCenter,
+        mapId: "DEMO_MAP_ID",
         styles: [
           {
             featureType: "poi",
@@ -161,18 +162,20 @@
 
       // Add markers for each attraction
       attractions.forEach((attraction) => {
-        const marker = new google.maps.Marker({
-          position: attraction.position,
+        // Create custom marker element
+        const markerContent = document.createElement("div");
+        markerContent.style.width = "20px";
+        markerContent.style.height = "20px";
+        markerContent.style.borderRadius = "50%";
+        markerContent.style.backgroundColor = "#f5c518";
+        markerContent.style.border = "2px solid #b38700";
+        markerContent.style.cursor = "pointer";
+
+        const marker = new google.maps.marker.AdvancedMarkerElement({
           map: map,
-          title: attraction.name,
-          icon: {
-            path: google.maps.SymbolPath.CIRCLE,
-            scale: 10,
-            fillColor: "#f5c518",
-            fillOpacity: 1,
-            strokeColor: "#b38700",
-            strokeWeight: 2
-          }
+          position: attraction.position,
+          content: markerContent,
+          title: attraction.name
         });
 
         // Create info window
@@ -187,7 +190,10 @@
 
         // Show info window on marker click
         marker.addListener("click", () => {
-          infoWindow.open(map, marker);
+          infoWindow.open({
+            anchor: marker,
+            map: map
+          });
         });
       });
     }
@@ -196,9 +202,9 @@
     window.initMap = initMap;
   </script>
 
-  <!-- Google Maps API - REPLACE 'YOUR_API_KEY_HERE' with your actual API key -->
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5NX6EEylk36xryW4MAvjkkT9LMeBu4B0&callback=initMap">
+  <!-- Google Maps API -->
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5NX6EEylk36xryW4MAvjkkT9LMeBu4B0&callback=initMap&libraries=marker">
   </script>
 </body>
 </html>
