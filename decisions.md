@@ -34,4 +34,7 @@
 - Claude breakpoint suggestion accepted/rejected: I accepted the overall recommendation to use a 3-tier responsive system (desktop/tablet/mobile), but I rejected keeping tablet and mobile behavior too visually similar; I added clearer mobile-specific interaction changes so the phone experience feels intentionally designed rather than just compressed.
 
 ## Stretch Features
-_Add entries if you implement any stretch features._
+- Interactive attractions map (`attractions.html`): I embedded a Google Map centered on NYC and created custom markers for each featured attraction with info windows so users can visualize distance and neighborhood clustering instead of scanning only card text.
+- Gallery lightbox (`gallery.html` + `styles.css`): I added a full-screen lightbox with previous/next controls, keyboard navigation (Escape + arrow keys), and caption syncing to make the photo gallery feel like an interactive experience rather than a static image grid.
+- Food category filtering (`guide.html`): I implemented client-side category filters (`restaurants`, `bakeries`, `cafes`, `desserts`) that toggle visible cards, update the section heading, and show an empty state when needed so users can quickly narrow recommendations by intent.
+- Scroll-reveal motion system (`index.html`, `attractions.html`, `guide.html`, `gallery.html`, and `styles.css`): I used `IntersectionObserver` to trigger fade/slide-in animations for sections and cards, then added a `prefers-reduced-motion` fallback so the enhancement stays accessible.

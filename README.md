@@ -1,110 +1,98 @@
-# globetrotter-nyc
+# Globetrotter NYC
 
 ## Unit Assignment: Globetrotter
 
 Submitted by: Jennifer Ye
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **TBD** hours total
 
-Deployed Application (optional): [Globetrotter Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Globetrotter Deployed Site](https://jensome6065.github.io/globetrotter-nyc/)
 
 ### Application Features
 
-#### CORE FEATURES
+#### Core Features
 
-- [ ] **Home Page**
-  - [ ] A heading that mentions the destination.
-  - [ ] An introductory paragraph that welcomes visitors and describes the purpose of the website. 
-  - [ ] An evocative image *or* other visual media (video, hero-video background, etc.) that represents the location.
-  - [ ] Content organized using Flexbox for a fluid layout.
+- [x] **Home Page**
+  - [x] Destination-focused heading and intro copy.
+  - [x] Hero image and local-first framing.
+  - [x] Flexbox-based layout with responsive behavior.
 
-- [ ] **Top Attractions Page**
-  - [ ] A separate page featuring a minimum of three attractions, each including a:
-    - [ ] Name
-    - [ ] Photo
-    - [ ] Brief description
-  - [ ] Each attraction is styled the same
-    - E.g. same font, image size, title size, etc. 
-  - [ ] Content arranged with Flexbox for consistency and responsiveness.
+- [x] **Top Attractions Page**
+  - [x] Dedicated page with multiple attractions, each including name, photo, and description.
+  - [x] Consistent attraction card styling and image treatment.
+  - [x] Responsive Flexbox layout.
 
-- [ ] **Guide Page** *(build one guide page of the type you choose below)*
-  - [ ] A separate page that is *one* of the following: a Food Guide, an Accommodations Guide, *or* an Upcoming Local Events Guide.
-  - [ ] At least three entries thematic to your choice that provide a:
-    - [ ] Title
-    - [ ] Address
-    - [ ] Description
-    - [ ] Link with more information (e.g. link to a restaurant page)
-  - [ ] Each entry should be:
-    - [ ] Catered to a specific type of traveler (families, backpackers, etc.)
-    - [ ] Styled the same
-      - E.g. same font, title size, etc.
-  - [ ] Content arranged with Flexbox for consistency and responsiveness. 
+- [x] **Guide Page (Food Guide)**
+  - [x] Dedicated food guide page.
+  - [x] Multiple entries with title, location, description, and external link when available.
+  - [x] Consistent card styling and responsive layout.
 
-- [ ] **Photo Gallery**
-  - [ ] Separate page with at least five images related to the site's topic.
-  - [ ] Each image should include a caption describing the image.
-  - [ ] Presented in a responsive design using Flexbox.
+- [x] **Photo Gallery**
+  - [x] Dedicated gallery page with 5+ NYC photos.
+  - [x] Captions included for each image.
+  - [x] Responsive Flexbox gallery layout.
 
-- [ ] **Navigation Bar**
-  - [ ] Navigation bar with working links to each of the following pages:
-    - [ ] Home Page
-    - [ ] Top Attractions
-    - [ ] Photo Gallery
-    - [ ] Guide Page (Food Guide, Accommodations Guide, _or_ Upcoming Local Events Guide)
-  - [ ] Navigation bar can be accessed from each page of the website.
-  - [ ] Styled with Flexbox that adapts to different screen sizes.  
+- [x] **Navigation Bar**
+  - [x] Working links across Home, Top Attractions, Food Guide, and Photo Gallery.
+  - [x] Navbar appears on every page.
+  - [x] Responsive behavior for mobile/tablet/desktop.
 
-- [ ] **Smartphone Friendly**
-  - [ ] A design that is fully functional and aesthetically pleasing on smartphones is achieved using media queries.
+- [x] **Smartphone Friendly**
+  - [x] Mobile-specific layout and spacing updates through media queries.
 
 ### Stretch Features
 
-- [ ] **Additional Media**
-  - [ ] Embed a piece of media that is not an image or text and relates to the travel content such as a:
-    - Map
-    - Video
-    - Song
+- [x] **Additional Media**
+  - [x] Embedded interactive Google Map on `attractions.html` with custom attraction markers and info windows.
 
-- [ ] **Enhanced Layouts**
-  - [ ] Utilize CSS Grid on one or more pages for a unique layout.
+- [x] **Enhanced Layouts**
+  - [x] Used CSS Grid selectively in the mobile navbar layout for cleaner small-screen navigation.
 
 - [ ] **Interactive Navigation**
-  - [ ] Implement a dropdown menu where at least one menu item includes a nested dropdown menu to access additional categories or sub-pages.
+  - [ ] Dropdown + nested dropdown not implemented.
 
-- [ ]**Travel Newsletter Form**
-  - [ ] Create a form to allow users to sign up for a travel newsletter, enhancing user engagement.
-  - [ ] *Note*: You do not have to collect and save the data submitted using the form. 
+- [ ] **Travel Newsletter Form**
+  - [ ] Newsletter form not implemented.
 
-- [ ] **Deployment**
-  - [ ] Deploy your website so it's accessible to the public outside of your local machine. 
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please film yourself using your deployed URL with the URL visible in your video. 
+- [x] **Deployment**
+  - [x] Public deployed URL not added yet.
+  - [x] Walkthrough using deployed URL still pending.
 
-- [ ] **Custom Styling**: Add a personal touch to your site's design.
-  - [ ] Integrate at least one custom font using Google Fonts to add personality to your site.
-  - [ ] Experiment with at least one CSS property not covered in the lessons or labs to customize your page further.
+- [x] **Custom Styling**
+  - [x] Google Fonts integration (`Barlow Condensed`, `Inter`).
+  - [x] Additional styling/interaction enhancements including lightbox transitions, scroll-reveal animation, and reduced-motion accessibility fallback.
+
+### Additional Implemented Enhancements
+
+- Category-based food filtering with dynamic section heading updates and empty-state handling.
+- Interactive photo lightbox with previous/next controls, keyboard navigation, and captions.
+- Scroll-triggered animations using `IntersectionObserver`.
+- Improved mobile UX for navbar and hero CTA section.
 
 ### Walkthrough Video
 
-**Walkthrough video:** [Globetrotter Walkthrough](ADD_LOOM_LINK_HERE)
+**Walkthrough video:** [Globetrotter Walkthrough](https://canva.link/hzuirvem7f38vs5)
 
 ### Reflection
 
-* Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+- **Did labs prepare you?**
+  - The HTML semantics, Flexbox, and responsive media-query labs covered most of the project foundation well.
+  - The biggest stretch was layering multiple JS interactions together (map, filtering, lightbox, and scroll animation) while keeping the experience clean on mobile.
 
-Add your response here
+- **What would you improve with more time?**
+  - Add stronger accessibility refinements (focus trapping in lightbox and more ARIA states).
+  - Expand filtering/sorting by neighborhood and budget across attractions and food pages.
+  - Dark and light mode toggle feature
 
-* If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
-  
-Add your response here
+- **What went well in demo + what to try next time?**
+  - The local-first content angle and visual consistency across pages worked well.
+  - Next time, I would prototype mobile interactions earlier to reduce late-stage responsive adjustments.
 
-* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+### Open-Source Libraries / APIs Used
 
-Add your response here
+- [Google Fonts](https://fonts.google.com/)
+- [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript)
 
-### Open-source libraries used
+### Shout Out
 
-- Add any links to open-source libraries used in your project.
-
-### Shout out
-
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shout out to my CodePath cohort peers, TA, and instructional team for feedback during milestone check-ins.
