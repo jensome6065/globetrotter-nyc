@@ -537,6 +537,11 @@ footer {
   border-top: 4px solid var(--accent);
 }
 
+footer p {
+  color: #ffffff;
+  opacity: 0.9;
+}
+
 /* ===================================
    MOBILE-FIRST BASE STYLES (320px+)
    =================================== */
