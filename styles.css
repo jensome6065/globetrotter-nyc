@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
   font-family: "Inter", Arial, sans-serif;
@@ -362,7 +366,8 @@ select {
   gap: 0.8rem;
 }
 
-.traveler-tabs a {
+.traveler-tabs a,
+.traveler-tabs .category-filter {
   text-decoration: none;
   padding: 0.5rem 0.75rem;
   border: 2px solid var(--border);
@@ -370,11 +375,21 @@ select {
   background: #fff;
   font-weight: 600;
   color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .traveler-tabs a:hover,
-.traveler-tabs a:focus {
+.traveler-tabs a:focus,
+.traveler-tabs .category-filter:hover,
+.traveler-tabs .category-filter:focus {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.traveler-tabs .category-filter.is-active {
   border-color: var(--accent);
   background: var(--accent-light);
 }
