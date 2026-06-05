@@ -19,7 +19,9 @@
 - Wireframe-driven choice: The gallery and card layouts in my wireframes directly led me to use repeating semantic patterns (`<article>` for cards and `<figure>` for photos) for consistency across pages.
 
 ## Milestone 2: CSS Styling
-_Add entries after applying styles._
+- Color/font choice: I chose a charcoal/off-white base with a taxi-yellow accent (`#f5c518`) plus `Barlow Condensed` for headings and `Inter` for body text; this matches NYC's bold signage energy while keeping long content easy to scan for first-time visitors.
+- Claude suggestion I rejected: Claude suggested a subway-line blue accent option, but I rejected it in favor of taxi yellow because blue felt more corporate/tech and less "street-level NYC" for this audience.
+- Style that needed correction: My first pass made all section cards feel too heavy and boxed-in, so I softened the visual weight with lighter borders, more internal spacing, and cleaner button contrast to restore the accessible, navigable feel from the wireframe.
 
 ## Milestone 3: Flexbox Layout
 _Add entries after implementing Flexbox._
