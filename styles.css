@@ -209,7 +209,6 @@ select {
 .feature a,
 .explore-links a,
 .context-links a,
-.mini-map a,
 .food-card a {
   display: inline-block;
   text-decoration: none;
@@ -228,7 +227,6 @@ select {
 .feature a:hover,
 .explore-links a:hover,
 .context-links a:hover,
-.mini-map a:hover,
 .food-card a:hover {
   background: var(--accent);
   color: var(--text);
@@ -522,6 +520,18 @@ select {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+}
+
+.mini-map a {
+  color: var(--accent-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.mini-map a:hover,
+.mini-map a:focus-visible {
+  color: var(--text);
 }
 
 .etiquette ul {
