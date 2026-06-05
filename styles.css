@@ -428,8 +428,9 @@ select {
 .traveler-tabs {
   background: transparent;
   border: none;
-  padding: 0;
-  margin-bottom: -1rem;
+  box-shadow: none;
+  padding: 1.5rem 0;
+  margin-bottom: 0;
 }
 
 .traveler-tabs h2 {
