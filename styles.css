@@ -801,3 +801,25 @@ header {
     transition: none;
   }
 }
+
+/* ===================================
+   INTERACTIVE MAP
+   =================================== */
+
+.map-container {
+  margin-block: 2rem;
+}
+
+#attractions-map {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  #attractions-map {
+    height: 600px;
+  }
+}
