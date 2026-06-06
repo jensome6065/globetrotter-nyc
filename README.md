@@ -55,8 +55,8 @@ Deployed Application (optional): [Globetrotter Deployed Site](https://jensome606
   - [ ] Newsletter form not implemented.
 
 - [x] **Deployment**
-  - [x] Public deployed URL not added yet.
-  - [x] Walkthrough using deployed URL still pending.
+  - [x] Deploy your website so it's accessible to the public outside of your local machine. 
+  - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please film yourself using your deployed URL with the URL visible in your video. 
 
 - [x] **Custom Styling**
   - [x] Google Fonts integration (`Barlow Condensed`, `Inter`).
