@@ -4,7 +4,7 @@
 
 Submitted by: Jennifer Ye
 
-Estimated time spent: **TBD** hours total
+Estimated time spent: **7** hours total
 
 Deployed Application (optional): [Globetrotter Deployed Site](https://jensome6065.github.io/globetrotter-nyc/)
 
@@ -95,4 +95,4 @@ Deployed Application (optional): [Globetrotter Deployed Site](https://jensome606
 
 ### Shout Out
 
-Shout out to my CodePath cohort peers, TA, and instructional team for feedback during milestone check-ins.
+Shout out to everuone who watched me crash out over this! @cohort @instructors @mentors @manager @team
